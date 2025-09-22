@@ -5,8 +5,19 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxtjs/tailwindcss',
     '@nuxtjs/i18n',
-    '@nuxt/eslint'
+    '@nuxt/eslint',
+    '@nuxtjs/color-mode'
   ],
+  colorMode: {
+    preference: 'system',
+    fallback: 'light',
+    classSuffix: ''
+  },
+  css: ['~/assets/css/tailwind.css'],
+  tailwindcss: {
+    cssPath: '~/assets/css/tailwind.css',
+    configPath: 'tailwind.config'
+  },
   i18n: {
     langDir: 'locales',
     locales: [

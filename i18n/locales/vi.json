@@ -1,0 +1,4 @@
+{
+  "app": { "title": "Bảng điều khiển thiết bị" },
+  "auth": { "login": "Đăng nhập", "logout": "Đăng xuất" }
+}

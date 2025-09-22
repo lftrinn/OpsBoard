@@ -1,0 +1,4 @@
+{
+  "app": { "title": "Device Dashboard" },
+  "auth": { "login": "Login", "logout": "Logout" }
+}

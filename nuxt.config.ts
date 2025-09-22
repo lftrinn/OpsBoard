@@ -13,9 +13,9 @@ export default defineNuxtConfig({
     fallback: 'light',
     classSuffix: ''
   },
-  css: ['~/assets/css/tailwind.css'],
+  css: ['~/assets/styles/main.scss'],
   tailwindcss: {
-    cssPath: '~/assets/css/tailwind.css',
+    cssPath: '~/assets/styles/main.scss',
     configPath: 'tailwind.config'
   },
   i18n: {

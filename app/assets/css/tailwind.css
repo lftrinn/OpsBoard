@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer base {
+  :root {
+    --bg: 255 255 255;
+    --fg: 33 53 71;
+    --card: 250 250 250;
+    --muted: 113 113 122;
+    --border: 228 228 231;
+    --brand: 66 184 131;
+    --brand-600: 58 168 118;
+    --brand-700: 46 143 106;
+    --accent: 53 73 94;
+  }
+  .dark {
+    --bg: 24 24 27;
+    --fg: 228 228 231;
+    --card: 39 39 42;
+    --muted: 161 161 170;
+    --border: 63 63 70;
+    --brand: 90 216 161;
+    --brand-600: 74 197 145;
+    --brand-700: 59 176 129;
+    --accent: 150 170 190;
+  }
+}

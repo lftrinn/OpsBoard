@@ -3,6 +3,8 @@
   "type": "module",
   "private": true,
   "scripts": {
+    "lint": "eslint .",
+    "test": "vitest run --coverage",
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",

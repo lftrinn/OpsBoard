@@ -1,6 +1,10 @@
 <script setup lang="ts">
   import { useI18n } from 'vue-i18n'
   const { t, setLocale } = useI18n()
+
+  async function switchLocale(code: 'en' | 'vi' | 'ko') {
+    await setLocale(code)
+  }
   const colorMode = useColorMode()
   const isDark = computed({
     get: () => colorMode.value === 'dark',
@@ -14,6 +18,12 @@
     <header class="sticky top-0 z-10 border-b border-border bg-card/80 backdrop-blur">
       <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
         <h1 class="font-semibold">Vue-inspired Design System · Tokens & Components</h1>
+        <div class="space-x-2 p-4">
+          <h1 class="text-xl font-semibold mb-4">{{ t('app.title') }}</h1>
+          <button class="px-3 py-1 border rounded" @click="switchLocale('en')">EN</button>
+          <button class="px-3 py-1 border rounded" @click="switchLocale('vi')">VI</button>
+          <button class="px-3 py-1 border rounded" @click="switchLocale('ko')">KO</button>
+        </div>
         <div class="flex items-center gap-3">
           <span class="text-sm text-muted/90">Theme</span>
           <button
@@ -34,27 +44,27 @@
         </p>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           <div class="rounded-xl border border-border overflow-hidden">
-            <div class="h-16 bg-brand"></div>
+            <div class="h-16 bg-brand"><span class="sr-only">brand</span></div>
             <div class="p-3 text-sm"><div class="font-medium">brand</div><div class="text-muted/90">primary actions</div></div>
           </div>
           <div class="rounded-xl border border-border overflow-hidden">
-            <div class="h-16 bg-brand-600"></div>
+            <div class="h-16 bg-brand-600"><span class="sr-only">brand</span></div>
             <div class="p-3 text-sm"><div class="font-medium">brand-600</div><div class="text-muted/90">hover</div></div>
           </div>
           <div class="rounded-xl border border-border overflow-hidden">
-            <div class="h-16 bg-brand-700"></div>
+            <div class="h-16 bg-brand-700"><span class="sr-only">brand</span></div>
             <div class="p-3 text-sm"><div class="font-medium">brand-700</div><div class="text-muted/90">active</div></div>
           </div>
           <div class="rounded-xl border border-border overflow-hidden">
-            <div class="h-16 bg-accent"></div>
+            <div class="h-16 bg-accent"><span class="sr-only">brand</span></div>
             <div class="p-3 text-sm"><div class="font-medium">accent</div><div class="text-muted/90">secondary emphasis</div></div>
           </div>
           <div class="rounded-xl border border-border overflow-hidden">
-            <div class="h-16 bg-card"></div>
+            <div class="h-16 bg-card"><span class="sr-only">brand</span></div>
             <div class="p-3 text-sm"><div class="font-medium">card</div><div class="text-muted/90">surface</div></div>
           </div>
           <div class="rounded-xl border border-border overflow-hidden">
-            <div class="h-16 bg-bg"></div>
+            <div class="h-16 bg-bg"><span class="sr-only">brand</span></div>
             <div class="p-3 text-sm"><div class="font-medium">bg</div><div class="text-muted/90">app background</div></div>
           </div>
         </div>
@@ -75,7 +85,7 @@
         <div class="grid sm:grid-cols-2 gap-4">
           <label class="block">
             <span class="text-sm text-muted/90">Text input</span>
-            <input type="text" placeholder="Type here…" class="mt-1 w-full rounded-lg border border-border bg-card text-fg px-3 py-2 placeholder:text-muted/70 focus:outline-none focus:ring-2 focus:ring-brand/50" />
+            <input type="text" placeholder="Type here…" class="mt-1 w-full rounded-lg border border-border bg-card text-fg px-3 py-2 placeholder:text-muted/70 focus:outline-none focus:ring-2 focus:ring-brand/50">
           </label>
           <label class="block">
             <span class="text-sm text-muted/90">Select</span>
@@ -123,8 +133,3 @@
     </div>
   </main>
 </template>
-
-<style lang="scss">
-
-
-</style>

@@ -6,26 +6,26 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@nuxtjs/i18n',
     '@nuxt/eslint',
-    '@nuxtjs/color-mode'
+    '@nuxtjs/color-mode',
   ],
   colorMode: {
     preference: 'system',
     fallback: 'light',
-    classSuffix: ''
+    classSuffix: '',
   },
   css: ['~/assets/styles/main.scss'],
   tailwindcss: {
     cssPath: '~/assets/styles/main.scss',
-    configPath: 'tailwind.config'
+    configPath: 'tailwind.config',
   },
   i18n: {
     langDir: 'locales',
     locales: [
       { code: 'en', name: 'English', file: 'en.json' },
       { code: 'vi', name: 'Tiếng Việt', file: 'vi.json' },
-      { code: 'ko', name: '한국어',     file: 'ko.json' }
+      { code: 'ko', name: '한국어', file: 'ko.json' },
     ],
     defaultLocale: 'ko',
-    vueI18n: './i18n.config.ts'
-  }
+    vueI18n: './i18n.config.ts',
+  },
 })

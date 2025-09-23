@@ -2,7 +2,7 @@ name: CI + SonarCloud
 
 on:
   push:
-    branches: [ main, develop, W1-* ]
+    branches: [main, develop, W1-*]
   pull_request:
 
 permissions:
@@ -61,4 +61,3 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: https://sonarcloud.io
-

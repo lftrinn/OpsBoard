@@ -12,7 +12,7 @@ describe('App (Nuxt shell)', () => {
       },
     })
 
-    expect(wrapper.findComponent({ name: 'NuxtLayout' }).exists()).toBe(false)
+    expect(wrapper.findComponent({ name: 'NuxtLayout' }).exists()).toBe(true)
     expect(wrapper.findComponent({ name: 'NuxtRouteAnnouncer' }).exists()).toBe(true)
   })
 

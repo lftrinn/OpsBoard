@@ -1,9 +1,10 @@
-name: CI + SonarCloud
+name: CI + SonarCloud + Vercel Deploy
 
 on:
   push:
-    branches: [main, develop, W1-*]
+    branches: [main, develop]
   pull_request:
+    branches: [main, develop]
 
 permissions:
   contents: read
@@ -31,26 +32,15 @@ jobs:
       - name: Lint
         run: npm run lint --if-present
 
-      # - name: Unit tests with coverage
-      #   run: npm run test --if-present
+      - name: Unit tests with coverage
+        run: npm run test --if-present
 
-      # - name: List coverage artifacts
-      #   if: always()
-      #   run: ls -lah coverage || true
+      - name: List coverage artifacts
+        if: always()
+        run: ls -lah coverage || true
 
       - name: Build
         run: npm run build --if-present
-
-      - name: Check SONAR_TOKEN
-        shell: bash
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: |
-          if [ -z "${SONAR_TOKEN:-}" ]; then
-            echo "::error::SONAR_TOKEN is missing"; exit 1;
-          else
-            echo "SONAR_TOKEN present ✅";
-          fi
 
       - name: SonarCloud Scan
         uses: SonarSource/sonarqube-scan-action@fd88b7d7ccbaefd23d8f36f73b59db7a3d246602
@@ -60,4 +50,20 @@ jobs:
             -Dsonar.branch.name=local-act
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_HOST_URL: https://sonarcloud.io
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+
+  deploy-to-vercel:
+    name: Deploy to Vercel
+    needs: build-test-and-analyze
+    runs-on: ubuntu-latest
+    if: success()
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+
+      - name: Install Vercel CLI
+        run: npm install -g vercel
+
+      - name: Deploy to Vercel
+        run: vercel --prod --yes --token=${{ secrets.VERCEL_TOKEN }}

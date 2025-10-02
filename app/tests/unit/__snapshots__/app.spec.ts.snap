@@ -1,0 +1,6 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`App (Nuxt shell) > matches snapshot 1`] = `
+"<nuxt-route-announcer-stub></nuxt-route-announcer-stub>
+<nuxt-layout-stub></nuxt-layout-stub>"
+`;

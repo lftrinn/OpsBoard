@@ -1,0 +1,132 @@
+# yaml-language-server: $schema=https://storage.googleapis.com/coderabbit_public_assets/schema.v2.json
+language: 'vi-VN'
+tone_instructions: ''
+early_access: false
+enable_free_tier: true
+
+reviews:
+  profile: 'assertive'
+  high_level_summary: true
+  high_level_summary_placeholder: '@coderabbitai summary'
+  auto_title_placeholder: '@coderabbitai'
+  auto_title_instructions: 'Sử dụng chuẩn W1-<task> và mô tả ngắn gọn. Ví dụ: W1-05_ESLint-Prettier'
+  review_status: true
+  commit_status: true
+  changed_files_summary: true
+  sequence_diagrams: true
+  estimate_code_review_effort: true
+  assess_linked_issues: true
+  related_issues: true
+  related_prs: true
+  suggested_labels: true
+  suggested_reviewers: true
+  poem: false
+
+  path_filters:
+    - 'app/**'
+    - 'components/**'
+    - 'layouts/**'
+    - 'pages/**'
+    - 'stores/**'
+    - 'tests/**'
+    - 'i18n/locales/**'
+    - 'app.vue'
+    - 'nuxt.config.*'
+    - '.eslintrc.*'
+    - '.prettier*'
+    - 'package.json'
+    - 'pnpm-lock.yaml'
+    - 'yarn.lock'
+    - '.github/workflows/**'
+    - '!node_modules/**'
+    - '!coverage/**'
+    - '!dist/**'
+    - '!.nuxt/**'
+    - '!.output/**'
+
+  path_instructions:
+    - path: 'stores/**'
+      instructions: |
+        Pinia: dùng defineStore với state/getters/actions rõ ràng. Không mutate state ngoài actions.
+        Thêm unit test cho mỗi store (tests/stores).
+    - path: '{pages/**,components/**,layouts/**}'
+      instructions: |
+        Vue 3 SFC dùng <script setup lang="ts">. Tên component đa từ (multi-word).
+        Không hard-code text: dùng i18n. Kiểm tra accessibility (aria-label, role, focus).
+    - path: 'i18n/locales/**'
+      instructions: |
+        Kiểm tra key đồng bộ giữa en.json, vi.json, ko.json.
+        Không để key mồ côi. Khuyến khích dot-notation.
+    - path: 'tests/**'
+      instructions: |
+        Unit test dùng Vitest + Vue Test Utils. Ưu tiên test logic (stores/composables).
+        Tránh snapshot test trừ UI ổn định. Đảm bảo coverage cho code thay đổi.
+    - path: '{app/**,app.vue}'
+      instructions: |
+        Giữ cấu hình styles nhất quán (_tokens.scss). Không để CSS trùng/khó override.
+
+  auto_review:
+    enabled: true
+    auto_incremental_review: true
+    ignore_title_keywords: ['WIP', 'draft']
+
+  finishing_touches:
+    docstrings:
+      enabled: true
+    unit_tests:
+      enabled: true
+
+  pre_merge_checks:
+    title:
+      mode: 'error'
+      requirements: 'Tiêu đề commit/PR phải bắt đầu bằng W1-<task>. Ví dụ: W1-05_ESLint-Prettier'
+    description:
+      mode: 'warning'
+    custom_checks:
+      - name: 'Kiểm tra Vitest cho logic'
+        instructions: |
+          Nếu sửa đổi trong stores/** hoặc pages/**, cần có test mới trong tests/**.
+      - name: 'Kiểm tra i18n'
+        instructions: |
+          Nếu có text UI mới, phải thêm key trong en.json, vi.json, ko.json.
+          Báo nếu thiếu key hoặc hard-code text.
+      - name: 'Kiểm tra accessibility'
+        instructions: |
+          Với UI mới, đảm bảo aria-label, keyboard navigation, contrast đạt chuẩn.
+
+  tools:
+    eslint:
+      enabled: true
+    markdownlint:
+      enabled: true
+    yamllint:
+      enabled: true
+    gitleaks:
+      enabled: true
+    actionlint:
+      enabled: true
+    semgrep:
+      enabled: true
+    htmlhint:
+      enabled: true
+    dotenvLint:
+      enabled: true
+    osvScanner:
+      enabled: true
+
+chat:
+  art: true
+  auto_reply: true
+
+knowledge_base:
+  opt_out: false
+  web_search:
+    enabled: true
+  code_guidelines:
+    enabled: true
+
+code_generation:
+  docstrings:
+    language: 'vi-VN'
+  unit_tests:
+    path_instructions: []

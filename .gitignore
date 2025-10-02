@@ -8,7 +8,6 @@ dist
 
 # Coverage & static analysis
 coverage/
-app/tests/
 .scannerwork/
 .sonarlint/
 .eslintcache

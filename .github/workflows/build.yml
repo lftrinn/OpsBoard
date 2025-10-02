@@ -1,9 +1,10 @@
-name: CI + SonarCloud
+name: CI + SonarCloud + Vercel Deploy
 
 on:
   push:
-    branches: [main, develop, W1-*]
+    branches: [main, develop]
   pull_request:
+    branches: [main, develop]
 
 permissions:
   contents: read
@@ -50,3 +51,19 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+
+  deploy-to-vercel:
+    name: Deploy to Vercel
+    needs: build-test-and-analyze
+    runs-on: ubuntu-latest
+    if: success()
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install Vercel CLI
+        run: npm install -g vercel
+
+      - name: Deploy to Vercel
+        run: vercel --prod --yes --token=${{ secrets.VERCEL_TOKEN }}

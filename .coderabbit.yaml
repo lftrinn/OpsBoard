@@ -45,23 +45,23 @@ reviews:
     - '!.output/**'
 
   path_instructions:
-    - paths: ['stores/**']
+    - path: 'stores/**'
       instructions: |
         Pinia: dùng defineStore với state/getters/actions rõ ràng. Không mutate state ngoài actions.
         Thêm unit test cho mỗi store (tests/stores).
-    - paths: ['pages/**', 'components/**', 'layouts/**']
+    - path: '{pages/**,components/**,layouts/**}'
       instructions: |
         Vue 3 SFC dùng <script setup lang="ts">. Tên component đa từ (multi-word).
         Không hard-code text: dùng i18n. Kiểm tra accessibility (aria-label, role, focus).
-    - paths: ['i18n/locales/**']
+    - path: 'i18n/locales/**'
       instructions: |
         Kiểm tra key đồng bộ giữa en.json, vi.json, ko.json.
         Không để key mồ côi. Khuyến khích dot-notation.
-    - paths: ['tests/**']
+    - path: 'tests/**'
       instructions: |
         Unit test dùng Vitest + Vue Test Utils. Ưu tiên test logic (stores/composables).
         Tránh snapshot test trừ UI ổn định. Đảm bảo coverage cho code thay đổi.
-    - paths: ['app/**', 'app.vue']
+    - path: '{app/**,app.vue}'
       instructions: |
         Giữ cấu hình styles nhất quán (_tokens.scss). Không để CSS trùng/khó override.
 

@@ -25,7 +25,7 @@ export default defineNuxtConfig({
       { code: 'vi', name: 'Tiếng Việt', file: 'vi.json' },
       { code: 'ko', name: '한국어', file: 'ko.json' },
     ],
-    defaultLocale: 'ko',
+    defaultLocale: 'en',
     vueI18n: './i18n.config.ts',
   },
 })

@@ -1,4 +1,26 @@
 {
-  "app": { "title": "Device Dashboard" },
-  "auth": { "login": "Login", "logout": "Logout" }
+  "auth": {
+    "login": {
+      "title": "Sign in",
+      "subtitle": "Welcome back to OpsBoard",
+      "email": "Email",
+      "password": "Password",
+      "cta": "Sign in",
+      "forgot": "Forgot password?",
+      "noAccount": "Don't have an account?",
+      "createOne": "Create one"
+    },
+    "errors": {
+      "required": "This field is required",
+      "email": "Please enter a valid email",
+      "min": "Please enter at least {n} characters",
+      "general": "Login failed. Please try again."
+    }
+  },
+  "themeToggle": "Toggle Theme",
+  "locales": {
+    "en": "English",
+    "vi": "Vietnamese",
+    "ko": "Korean"
+  }
 }

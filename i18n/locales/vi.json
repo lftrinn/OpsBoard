@@ -1,4 +1,26 @@
 {
-  "app": { "title": "Bảng điều khiển thiết bị" },
-  "auth": { "login": "Đăng nhập", "logout": "Đăng xuất" }
+  "auth": {
+    "login": {
+      "title": "Đăng nhập",
+      "subtitle": "Chào mừng bạn quay lại OpsBoard",
+      "email": "Email",
+      "password": "Mật khẩu",
+      "cta": "Đăng nhập",
+      "forgot": "Quên mật khẩu?",
+      "noAccount": "Chưa có tài khoản?",
+      "createOne": "Tạo tài khoản"
+    },
+    "errors": {
+      "required": "Vui lòng không để trống",
+      "email": "Email không hợp lệ",
+      "min": "Vui lòng nhập tối thiểu {n} ký tự",
+      "general": "Đăng nhập thất bại. Vui lòng thử lại."
+    }
+  },
+  "themeToggle": "Chuyển đổi giao diện",
+  "locales": {
+    "en": "Tiếng Anh",
+    "vi": "Tiếng Việt",
+    "ko": "Tiếng Hàn"
+  }
 }

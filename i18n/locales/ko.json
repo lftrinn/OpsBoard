@@ -1,4 +1,45 @@
 {
-  "app": { "title": "장치 대시보드" },
-  "auth": { "login": "로그인", "logout": "로그아웃" }
+  "auth": {
+    "login": {
+      "title": "로그인",
+      "subtitle": "OpsBoard에 다시 오신 것을 환영합니다",
+      "email": "이메일",
+      "password": "비밀번호",
+      "cta": "로그인",
+      "forgot": "비밀번호를 잊으셨나요?",
+      "noAccount": "계정이 없으신가요?",
+      "createOne": "계정 만들기"
+    },
+    "errors": {
+      "required": "이 필드는 필수입니다",
+      "email": "유효한 이메일 주소를 입력하세요",
+      "min": "{n}자 이상 입력하세요",
+      "general": "로그인에 실패했습니다. 다시 시도해주세요."
+    }
+  },
+  "themeToggle": "테마 전환",
+  "locales": {
+    "en": "영어",
+    "vi": "베트남어",
+    "ko": "한국어"
+  },
+  "dashboard": {
+    "colorTokens": {
+      "title": "색상 토큰",
+      "description": "Vue 브랜드를 기반으로 합니다: #42b883 (브랜드), #35495e (강조), 그리고 중간색(neutral)입니다."
+    },
+    "alerts": {
+      "warning": {
+        "title": "경고",
+        "description": "· 경미한 경고입니다."
+      },
+      "error": {
+        "title": "오류",
+        "description": "· 주의가 필요한 오류입니다."
+      }
+    },
+    "card": {
+      "description": "카드에 대한 짧은 설명입니다."
+    }
+  }
 }

@@ -2,6 +2,7 @@ export function useTheme() {
   const isDark = useState<boolean>('theme:isDark', () => false)
 
   function apply() {
+    if (import.meta.server) return
     const root = document.documentElement
     if (isDark.value) root.classList.add('dark')
     else root.classList.remove('dark')

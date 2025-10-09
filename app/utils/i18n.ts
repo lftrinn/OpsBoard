@@ -13,7 +13,7 @@ export function detectBrowserLang(
   fallback: LangCode = 'en',
 ): LangCode {
   const arr: string[] =
-    (Array.isArray(navigator.languages) && navigator.languages.length && navigator.languages) ||
+    (navigator.languages?.length ? Array.from(navigator.languages) : []) ||
     (navigator.language ? [navigator.language] : [])
   for (const raw of arr) {
     const norm = normalizeToSupported(raw)

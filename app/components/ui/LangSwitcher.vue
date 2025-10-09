@@ -10,21 +10,19 @@ const props = defineProps<{
 
 const { locale, items, setLang } = useLocaleSwitch(props.only)
 
-const currentCode = computed(() =>
-  ((locale as unknown as { value?: string })?.value ?? String(locale)).toLowerCase(),
-)
+const currentCode = computed(() => {
+  const val = typeof locale === 'object' && 'value' in locale ? locale.value : locale
+  return String(val).toLowerCase()
+})
+
+const FLAG_MAP: Record<LangCode, string> = {
+  vi: '🇻🇳',
+  en: '🇺🇸',
+  ko: '🇰🇷',
+}
 
 function flagOf(code: LangCode) {
-  switch (code) {
-    case 'vi':
-      return '🇻🇳'
-    case 'en':
-      return '🇺🇸'
-    case 'ko':
-      return '🇰🇷'
-    default:
-      return '🏳️'
-  }
+  return FLAG_MAP[code] ?? '🏳️'
 }
 </script>
 

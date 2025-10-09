@@ -22,5 +22,24 @@
     "en": "English",
     "vi": "Vietnamese",
     "ko": "Korean"
+  },
+  "dashboard": {
+    "colorTokens": {
+      "title": "Color tokens",
+      "description": "Based on the Vue brand: #42b883 (brand), #35495e (accent), plus neutrals."
+    },
+    "alerts": {
+      "warning": {
+        "title": "Warning",
+        "description": "· Minor warning."
+      },
+      "error": {
+        "title": "Error",
+        "description": "· Important error."
+      }
+    },
+    "card": {
+      "description": "Short description for the card."
+    }
   }
 }

@@ -22,5 +22,24 @@
     "en": "영어",
     "vi": "베트남어",
     "ko": "한국어"
+  },
+  "dashboard": {
+    "colorTokens": {
+      "title": "색상 토큰",
+      "description": "Vue 브랜드를 기반으로 합니다: #42b883 (브랜드), #35495e (강조), 그리고 중간색(neutral)입니다."
+    },
+    "alerts": {
+      "warning": {
+        "title": "경고",
+        "description": "· 경미한 경고입니다."
+      },
+      "error": {
+        "title": "오류",
+        "description": "· 주의가 필요한 오류입니다."
+      }
+    },
+    "card": {
+      "description": "카드에 대한 짧은 설명입니다."
+    }
   }
 }

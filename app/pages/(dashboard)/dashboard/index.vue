@@ -11,10 +11,9 @@ const { t } = useI18n()
     <h1 class="text-2xl font-semibold">{{ t('auth.login.subtitle') }}</h1>
     <div class="mx-auto max-w-6xl space-y-10 px-4 py-8">
       <section>
-        <h2 class="mb-3 text-xl font-semibold">Color tokens</h2>
+        <h2 class="mb-3 text-xl font-semibold">{{ t('dashboard.colorTokens.title') }}</h2>
         <p class="mb-4 text-sm text-muted/90">
-          Dựa trên thương hiệu Vue: <code>#42b883</code> (brand), <code>#35495e</code> (accent), kèm
-          neutrals.
+          {{ t('dashboard.colorTokens.description') }}
         </p>
         <NuxtLink :to="ROUTES.AUTH_LOGIN" class="text-gray-700 underline dark:text-gray-300">
           {{ t('auth.login.cta') }}
@@ -151,10 +150,12 @@ const { t } = useI18n()
             <b class="text-brand">Info</b> · Vue brand tone for informational messages.
           </div>
           <div class="rounded-lg border border-amber-400/50 bg-amber-400/10 px-4 py-3">
-            <b class="text-amber-500">Warning</b> · Cảnh báo nhẹ.
+            <b class="text-amber-500">{{ t('dashboard.alerts.warning.title') }}</b> ·
+            {{ t('dashboard.alerts.warning.description') }}
           </div>
           <div class="rounded-lg border border-red-500/50 bg-red-500/10 px-4 py-3">
-            <b class="text-red-600">Error</b> · Lỗi cần chú ý.
+            <b class="text-red-600">{{ t('dashboard.alerts.error.title') }}</b> ·
+            {{ t('dashboard.alerts.error.description') }}
           </div>
         </div>
       </section>
@@ -163,7 +164,7 @@ const { t } = useI18n()
         <h2 class="mb-3 text-xl font-semibold">Card</h2>
         <article class="rounded-2xl border border-border bg-card p-4">
           <h3 class="font-semibold">Card title</h3>
-          <p class="mt-1 text-sm text-muted/90">Mô tả ngắn cho card.</p>
+          <p class="mt-1 text-sm text-muted/90">{{ t('dashboard.card.description') }}</p>
           <div class="mt-3">
             <button class="rounded-lg bg-brand px-3 py-1.5 text-white hover:bg-brand-600">
               Action

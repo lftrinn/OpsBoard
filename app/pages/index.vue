@@ -1,4 +1,3 @@
-<!-- pages/index.vue -->
 <script setup lang="ts">
 const { isLoggedIn } = useAuth()
 

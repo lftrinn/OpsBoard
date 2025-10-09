@@ -22,5 +22,24 @@
     "en": "Tiếng Anh",
     "vi": "Tiếng Việt",
     "ko": "Tiếng Hàn"
+  },
+  "dashboard": {
+    "colorTokens": {
+      "title": "Mã màu (Color tokens)",
+      "description": "Dựa trên thương hiệu Vue: #42b883 (brand), #35495e (accent), kèm neutrals."
+    },
+    "alerts": {
+      "warning": {
+        "title": "Cảnh báo",
+        "description": "· Cảnh báo nhẹ."
+      },
+      "error": {
+        "title": "Lỗi",
+        "description": "· Lỗi cần chú ý."
+      }
+    },
+    "card": {
+      "description": "Mô tả ngắn cho card."
+    }
   }
 }
